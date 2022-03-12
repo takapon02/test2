@@ -1,5 +1,5 @@
 import pandas as pd
-import yfinance as yf
+import yfinance
 import altair as alt
 import streamlit as st
 
@@ -24,7 +24,7 @@ st.write(f"""
 def get_data(days, tickers):
     df = pd.DataFrame()
     for company in tickers.keys():
-        tkr = yf.Ticker(tickers[company])
+        tkr = yfinance.Ticker(tickers[company])
         hist = tkr.history(priod=f'{days}d')
         hist.index = hist.index.strftime('%d %B %Y')
         hist = hist[['Close']]
