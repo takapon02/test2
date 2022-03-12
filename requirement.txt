@@ -1,5 +1,5 @@
 sreamlit==1.7.0
 numpy
 pandas
-yfinance==0.1.70
-altair==4.2.0
+yfinance
+altair
